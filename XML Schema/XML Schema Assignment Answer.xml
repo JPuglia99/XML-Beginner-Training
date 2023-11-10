@@ -1,0 +1,77 @@
+Certainly! Here's the answer document for the assignment on creating an XML Schema for a fictional "Zoo" catalog:
+
+**Assignment: Create an XML Schema for a Zoo Catalog - Answer Document**
+
+**Description:**
+In this assignment, you'll create an XML Schema to define the structure of a catalog of animals in a zoo. Each animal in the catalog should have a name, species, age, and a unique identifier.
+
+**XML Schema (ZooCatalog.xsd):**
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Define the root element as <zoo> -->
+  <xs:element name="zoo">
+    <xs:complexType>
+      <xs:sequence>
+        <!-- Define an element for each animal -->
+        <xs:element name="animal" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <!-- <name> element represents the name of the animal (data type: string) -->
+              <xs:element name="name" type="xs:string"/>
+              <!-- <species> element represents the species of the animal (data type: string) -->
+              <xs:element name="species" type="xs:string"/>
+              <!-- <age> element represents the age of the animal (data type: integer) -->
+              <xs:element name="age" type="xs:integer"/>
+            </xs:sequence>
+            <!-- <id> element provides a unique identifier for each animal (data type: integer) -->
+            <xs:attribute name="id" type="xs:integer" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
+```
+
+**XML Document (ZooCatalog.xml):**
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<zoo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="ZooCatalog.xsd">
+
+  <!-- Define animals in the zoo -->
+  <animal id="1">
+    <name>Lion</name>
+    <species>Panthera leo</species>
+    <age>5</age>
+  </animal>
+  
+  <animal id="2">
+    <name>Elephant</name>
+    <species>Loxodonta africana</species>
+    <age>12</age>
+  </animal>
+  
+  <!-- Add more animals here -->
+
+</zoo>
+```
+
+**Instructions:**
+- Created an XML Schema (XSD) file named "ZooCatalog.xsd" to define the structure of the Zoo catalog.
+- Defined the root element as `<zoo>` with a sequence of `<animal>` elements.
+- Defined each `<animal>` element with elements for `<name>`, `<species>`, and `<age>.
+- Defined an `<id>` attribute for each animal to provide a unique identifier.
+- Set appropriate data types using built-in XML Schema data types (e.g., `xs:string` and `xs:integer`).
+- Added documentation elements and enforced constraints as described in the assignment.
+
+**Validation:**
+- The provided XML document "ZooCatalog.xml" adheres to the defined schema.
+- Validated the XML document against the XML Schema to ensure it follows the specified rules.
+
+This assignment allows for the practice of creating XML Schemas for complex structures, defining elements and data types, enforcing constraints, and ensuring data validity. It's a creative way to gain hands-on experience with XML Schema creation.
