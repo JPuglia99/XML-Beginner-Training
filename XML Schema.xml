@@ -4,19 +4,18 @@ XML Schema Definition (XSD) is a standard way to describe the elements and attri
 Basic Structure of an XML Schema:
 XML Schemas are written in XML themselves. A basic schema structure typically includes:
 
-xml
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <!-- Define elements, attributes, and data types here -->
 </xs:schema>
+
 Defining Simple Types:
 You can define simple data types using XSD, like strings, numbers, dates, and more. For example:
 
-xml
 <xs:element name="age" type="xs:integer"/>
+
 Defining Complex Types:
 Complex types describe the structure of elements containing other elements. For example:
 
-xml
 <xs:element name="person">
     <xs:complexType>
         <xs:sequence>
@@ -28,17 +27,16 @@ xml
 Attributes:
 You can also define attributes for elements. For example:
 
-xml
 <xs:element name="book">
     <xs:complexType>
         <xs:attribute name="id" type="xs:integer"/>
         <xs:attribute name="title" type="xs:string"/>
     </xs:complexType>
 </xs:element>
+
 Restrictions and Validations:
 You can set restrictions on data types, such as minimum and maximum values for numbers or lengths for strings. For instance:
 
-xml
 <xs:element name="price">
     <xs:simpleType>
         <xs:restriction base="xs:decimal">
@@ -47,6 +45,7 @@ xml
         </xs:restriction>
     </xs:simpleType>
 </xs:element>
+
 Using Namespaces:
 XML Schemas can use namespaces to avoid naming conflicts. You can define your own namespaces for your schemas.
 
@@ -54,6 +53,7 @@ xml
 <xs:schema xmlns:my="http://example.com/mynamespace">
     <!-- Define elements and types with the 'my' namespace -->
 </xs:schema>
+
 Validation:
 You can validate XML documents against your schema using various XML processing libraries or tools. This ensures that the document adheres to the schema rules.
 
@@ -68,9 +68,8 @@ xml
         </xs:documentation>
     </xs:annotation>
 </xs:element>
+
 References and Imports:
 XML Schemas can reference or import other schemas to reuse types and elements defined in them.
 
-xml
 <xs:import namespace="http://example.com/othernamespace" schemaLocation="other-schema.xsd"/>
-This tutorial provides a basic introduction to XML Schema. To master XML Schema, you'll want to explore more advanced topics such as namespaces, key/keyref constraints, and complex type derivations. Additionally, practice by creating and validating XML documents against your schemas.
