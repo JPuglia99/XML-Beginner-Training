@@ -1,0 +1,35 @@
+**Assignment: Create an XML Schema for a Zoo Catalog**
+
+**Description:**
+In this assignment, you'll create an XML Schema to define the structure of a catalog of animals in a zoo. Each animal in the catalog should have a name, species, age, and a unique identifier.
+
+**Instructions:**
+1. Create an XML Schema definition (XSD) that defines the structure of the XML document for the Zoo catalog.
+
+2. Define the root element as `<zoo>`.
+
+3. Inside the `<zoo>` element, define an element for each animal. Use a name like `<animal>` for each animal.
+
+4. For each `<animal>` element, define the following elements:
+   - `<name>` to represent the name of the animal (data type: string).
+   - `<species>` to represent the species of the animal (data type: string).
+   - `<age>` to represent the age of the animal (data type: integer).
+   - `<id>` to provide a unique identifier for each animal (data type: integer). Ensure that each `<id>` is unique within the catalog.
+
+5. Set appropriate data types for the elements. Use built-in XML Schema data types such as `xs:string` and `xs:integer` for the elements. 
+
+6. Add appropriate constraints and validations, such as requiring the `<name>`, `<species>`, and `<id>` elements for each animal. Make '<age>' optional.
+
+7. Ensure that the `<id>` element is unique for each animal, and enforce this constraint in your schema.
+
+8. Add documentation elements to provide descriptions for each element.
+
+**Validation:**
+After creating your XML Schema, create an XML document that adheres to the schema you've defined. Ensure that you have multiple animals in your XML document. Validate the XML document against your schema to make sure it adheres to the rules you've defined.
+
+**Submission:**
+1. Create an XML Schema file (XSD) for the Zoo catalog.
+2. Create an XML document that adheres to your schema, containing details of animals in the zoo.
+
+
+This assignment will help you practice creating XML Schemas for more complex structures, defining elements and data types, enforcing constraints, and ensuring data validity. It's a fun and creative way to gain hands-on experience with XML Schema creation.
