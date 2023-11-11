@@ -1,0 +1,78 @@
+Answer Document: Zoo Animal Data Query with XQuery
+
+Task 1: List the names of all the animals in the zoo.
+
+for $animal in /zoo/animal
+return $animal/name
+
+Expected Result:
+<Lion/>
+<Giraffe/>
+<Monkey/>
+<Toucan/>
+
+Task 2: Find the age of the youngest animal in the zoo.
+
+min(/zoo/animal/age)
+
+Expected Result:
+3
+
+Task 3: Find the names of animals with a species that starts with the letter "P."
+
+for $animal in /zoo/animal
+where starts-with($animal/species, "P")
+return $animal/name
+
+Expected Result:
+<Lion/>
+
+Task 4: Count the total number of animals in the zoo.
+
+count(/zoo/animal)
+
+Expected Result:
+4
+
+Task 5: Retrieve the names of animals with an age greater than or equal to 5.
+
+for $animal in /zoo/animal
+where $animal/age >= 5
+return $animal/name
+
+Expected Result:
+<Lion/>
+<Giraffe/>
+
+If we put them all together into an XQuery body, it would look like this.
+
+let $zoo := /zoo
+
+return
+<zoo-query-results>
+    <animal-names>
+        {for $animal in $zoo/animal
+        return $animal/name}
+    </animal-names>
+
+    <youngest-animal-age>
+        {min($zoo/animal/age)}
+    </youngest-animal-age>
+
+    <species-starting-with-P>
+        {for $animal in $zoo/animal
+        where starts-with($animal/species, "P")
+        return $animal/name}
+    </species-starting-with-P>
+
+    <total-animal-count>
+        {count($zoo/animal)}
+    </total-animal-count>
+
+    <animals-age-greater-than-or-equal-to-5>
+        {for $animal in $zoo/animal
+        where $animal/age >= 5
+        return $animal/name}
+    </animals-age-greater-than-or-equal-to-5>
+</zoo-query-results>
+

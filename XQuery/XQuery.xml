@@ -1,0 +1,121 @@
+XQuery is a powerful language for querying and transforming XML data. Let's explore some common XQuery operations and examples to help you understand how it works.
+
+**1. Selecting Elements and Attributes:**
+
+You can use XQuery to select specific elements and attributes from an XML document. Here's an example:
+
+let $xml := 
+<bookstore>
+  <book ISBN="123">
+    <title>Introduction to XQuery</title>
+    <author>John Doe</author>
+  </book>
+  <book ISBN="456">
+    <title>Advanced XML Processing</title>
+    <author>Jane Smith</author>
+  </book>
+</bookstore>
+
+return $xml/book/title
+
+**Result:**
+<title>Introduction to XQuery</title>
+<title>Advanced XML Processing</title>
+```
+
+In this example, the XQuery expression selects all `<title>` elements from the XML document.
+
+**2. Filtering Data:**
+
+XQuery allows you to filter data based on specific conditions. Here's an example of filtering books by a particular author:
+
+```xquery
+let $xml := ... (same XML as above)
+
+return $xml/book[author = 'John Doe']
+```
+
+**Result:**
+```
+<book ISBN="123">
+  <title>Introduction to XQuery</title>
+  <author>John Doe</author>
+</book>
+```
+
+This XQuery expression filters the books to include only those written by 'John Doe.'
+
+**3. FLWOR Expressions:**
+
+XQuery often uses FLWOR expressions (For-Let-Where-Order-Return) for complex queries and transformations. For example, finding books by a specific author and ordering them by title:
+
+```xquery
+let $xml := ... (same XML as above)
+
+for $book in $xml/book
+where $book/author = 'John Doe'
+order by $book/title
+return $book
+```
+
+**Result:**
+```
+<book ISBN="123">
+  <title>Advanced XML Processing</title>
+  <author>John Doe</author>
+</book>
+<book ISBN="456">
+  <title>Introduction to XQuery</title>
+  <author>John Doe</author>
+</book>
+```
+
+This XQuery expression uses a FLWOR expression to find books by 'John Doe' and orders them by title.
+
+**4. Data Transformation:**
+
+XQuery can transform data into different structures or formats. Here's an example of transforming books into a list of titles:
+
+```xquery
+let $xml := ... (same XML as above)
+
+return <titles> {for $book in $xml/book return $book/title} </titles>
+```
+
+**Result:**
+```
+<titles>
+  <title>Introduction to XQuery</title>
+  <title>Advanced XML Processing</title>
+</titles>
+```
+
+This XQuery expression transforms the books into a list of titles within a `<titles>` element.
+
+**5. Aggregation:**
+
+XQuery supports aggregation functions. Here's an example of calculating the average age of animals in a zoo:
+
+```xquery
+let $zoo :=
+  <zoo>
+    <animal>
+      <name>Lion</name>
+      <age>5</age>
+    </animal>
+    <animal>
+      <name>Giraffe</name>
+      <age>7</age>
+    </animal>
+  </zoo>
+
+return avg($zoo/animal/age)
+```
+**Result:**
+```
+6
+```
+
+This XQuery expression calculates the average age of the animals in the zoo.
+
+These examples demonstrate various aspects of XQuery, from simple element selection to more complex operations like filtering, transformation, and aggregation. XQuery is a versatile language for working with XML data and is widely used in applications involving XML processing.

@@ -1,0 +1,49 @@
+Assignment Title: Zoo Animal Data Query with XQuery
+
+Assignment Description:
+
+You are provided with an XML document representing a zoo with information about various animals. Your task is to use XQuery to extract specific information from the XML document.
+
+XML Schema (zoo-schema.xsd): The XML Schema provided in your previous message.
+
+Sample XML Document (zoo.xml):
+
+<zoo>
+  <animal id="1">
+    <name>Lion</name>
+    <species>Panthera leo</species>
+    <age>6</age>
+  </animal>
+  <animal id="2">
+    <name>Giraffe</name>
+    <species>Giraffa camelopardalis</species>
+    <age>9</age>
+  </animal>
+  <animal id="3">
+    <name>Monkey</name>
+    <species>Cebus capucinus</species>
+    <age>5</age>
+  </animal>
+  <animal id="4">
+    <name>Toucan</name>
+    <species>Ramphastos toco</species>
+    <age>3</age>
+  </animal>
+</zoo>
+
+Tasks:
+1) Write an XQuery expression to list the names of all the animals in the zoo.
+2) Write an XQuery expression to find the age of the youngest animal in the zoo.
+3) Write an XQuery expression to find the names of animals with a species that starts with the letter "P."
+4) Write an XQuery expression to count the total number of animals in the zoo.
+5) Write an XQuery expression to retrieve the names of animals with an age greater than or equal to 5.
+
+Submission Guidelines:
+
+You should submit your XQuery code for each task, along with the results of executing the code on the provided sample XML document (zoo.xml). Please include clear comments for each task to explain the purpose of your expressions.
+
+This assignment is designed for beginners to practice basic XQuery skills for querying and extracting data from an XML document that conforms to a specific XML Schema. It covers fundamental XQuery expressions for selecting, filtering, and aggregating data from an XML file.
+
+
+
+
